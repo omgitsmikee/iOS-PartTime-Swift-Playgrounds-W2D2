@@ -48,22 +48,35 @@ box1.area()
 //: Using the Box class as an example, create a new class called Bicycle. Bicycles should have two `Int` properties, `numberOfGears` and `currentGear` (give them sensible default values).
 //:
 //: Bicycles should also have two functions. `gearUp()` and `gearDown()`, which increase and decrease the value in `currentGear`.
-
+class Bicycle {
+    var numberOfGears : Int = 6
+    var currentGear : Int = 2
+    
+    func gearUp() -> Int {
+        self.currentGear += 1
+        return self.currentGear
+    }
+    
+    func gearDown () -> Int {
+        self.currentGear = self.currentGear - 1
+        return self.currentGear
+    }
+}
 
 
 
 
 //: Test your bicycle out by uncommenting the following code:
  
-//var myBike = Bicycle()
-//
-//myBike.numberOfGears = 16 // upgrade!
-//myBike.gearUp()
-//myBike.gearUp()
-//myBike.gearDown()
-//myBike.gearUp()
-//
-//print("my bike is in the \(myBike.currentGear)rd gear")
+var myBike = Bicycle()
+
+myBike.numberOfGears = 16 // upgrade!
+myBike.gearUp()
+myBike.gearUp()
+myBike.gearDown()
+myBike.gearUp()
+
+print("my bike is in the \(myBike.currentGear)rd gear")
 
 
 //: ## Challenge 2
@@ -108,13 +121,43 @@ brightBulb.watts
 //: Hint: don't forget to supply a number of gears when you create your bicycles!
 
 
+class newBicycle {
+    let numberOfGears : Double
+    var currentGear : Int
+    
+    init(gears : Double, currentGear : Int) {
+        self.numberOfGears = gears
+        self.currentGear = currentGear
+    }
+    
+    
+    func gearUp() -> Int {
+        self.currentGear += 1
+        return self.currentGear
+    }
+    
+    func gearDown () -> Int {
+        self.currentGear = self.currentGear - 1
+        return self.currentGear
+    }
+}
 
 
 
+var mikeBike = newBicycle(gears: 21, currentGear: 20)
+mikeBike.currentGear
+mikeBike.gearDown()
+mikeBike.gearDown()
+mikeBike.gearDown()
+mikeBike.gearUp()
 
 
-
-
+var demiBike = newBicycle(gears: 7, currentGear: 20)
+mikeBike.currentGear
+mikeBike.gearDown()
+mikeBike.gearDown()
+mikeBike.gearDown()
+mikeBike.gearUp()
 
 //: ## Bonus Challenge
 
@@ -126,9 +169,34 @@ brightBulb.watts
 //: The syntax for subclassing can be found in the Swift Cheat Sheet included with this Playground.
 //:
 //: Hint: height * width * depth = the area of a cube
+//class Box {
+//    var height: Double = 0.0
+//    var width: Double = 0.0
+//    
+//    func area() -> Double {
+//        return height * width
+//    }
+//}
 
 
+class Cube : Box {
+    
+    var depth: Double = 0
+    
+    func volume() -> Double {
+        return height * width * depth
+    }
+    
+    
+}
 
+
+var mikeCube = Cube()
+mikeCube.depth = 2
+mikeCube.height = 4
+mikeCube.width = 4
+mikeCube.volume()
+mikeCube.area()
 
 //: DONE!!! - Head back to compass to do today's tutorial.
 
